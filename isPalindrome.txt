@@ -1,0 +1,22 @@
+class Solution {
+    public boolean isPalindrome(int x) {
+        // O(N)
+	if (x < 0) {
+            return false;
+        }
+        if (x == 0) {
+            return true;
+        }
+        
+        String reversed = "";
+        int num = x;
+        while (num != 0) {
+            int temp = num % 10;
+            reversed += temp;
+            num /= 10;
+        }
+        String original = String.valueOf(x);
+        boolean result = original.equals(reversed) ? true : false;
+        return result;
+    }
+}
